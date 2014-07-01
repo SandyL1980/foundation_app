@@ -47,6 +47,7 @@ class PicturesController < ApplicationController
  
     @picture = Picture.find(params[:id])
     @title = @picture.title
+    @reviews =  @picture.reviews.all
 
     @pics = Picture.find(params[:id])
     # @comments =  @pics.comments.all
