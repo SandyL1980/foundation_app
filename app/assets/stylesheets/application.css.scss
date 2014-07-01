@@ -16,3 +16,16 @@
  *= require css.animation/style_common.css
  *= require css.animation/style1.css
  */
+
+ body {
+ 	background: #eee;
+ }
+
+ .margin {
+ 	margin: 4% 0;
+ }
+
+.alert-box {
+	margin: 3% auto 3% auto;
+	width: 60%;
+}

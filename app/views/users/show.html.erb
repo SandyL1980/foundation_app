@@ -1,0 +1,23 @@
+
+
+<div class="margin"></div>
+<div class="row">
+
+<div class="medium-6 medium-offset-3 columns">
+
+		<h3>My Account</h3>
+
+
+		<h1><em><%= @user[:name] %> </em>| <%= @user[:id] %></h1>
+
+
+
+		<ul>
+			<li><%= @user[:email]%></li>
+			<li><%= link_to "Change Account Settings", edit_user_path(@user) %></li>
+			<li><%= link_to "Delete Account", user_path(@user) , method: :delete, data: { confirm: 'Are you sure?' } %></li>
+		</ul>
+
+	</div>
+
+</div><!-- row -->
