@@ -5,3 +5,38 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+
+
+pictures = []
+
+30.times do |pic|
+  first = %w(Carter Luke Jackson Max Chloe Leah Sarah Nora)
+  last  = %w(Heaney Struhl Cannell Goode Grayson Rushmore Soper Ruben)
+  author = first[(rand(0..7))] + " " + last[(rand(0..7))]
+
+  description = "Lorem ipsum dolor sit amet, consectetur adipisicing."
+
+  lorempixel = %w(technics city business animals fashion nature people)
+  cat = lorempixel[(rand(0..7))]
+  url = cat.to_s + "/" + rand(1..9).to_s + "/"
+  cat_title = url.split
+  category_title = cat_title[0].chop.chop.chop
+
+  rand_title = %w(Cliché Shot Photo Photograph Picture Pic Art)
+  
+  title =  "*" +  category_title.capitalize.to_s + "  " + rand_title[(rand(0..7))].to_s + "*" 
+  
+  new_pic = [title, author, description, url]
+  pictures.push(new_pic)
+end
+
+pictures.each do |title, author, description, url|
+  Picture.create( :title => title,
+    :author => author,
+    :description => description,
+    :url => url 
+    )
+end
+

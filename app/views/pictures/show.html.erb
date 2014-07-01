@@ -1,0 +1,23 @@
+<div class="row">
+
+	<h1><%= @picture[:title] %></h1>
+	<p>By <%= @picture[:author] %></p>
+	<hr>
+
+	
+	<p><%= link_to "Back", root_url %> | <%= link_to "Edit", edit_picture_path(@picture) %> | <%= link_to "Delete", @picture, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+	<div class="clearfix"></div>
+
+	<div class="medium-6 columns">
+		<img class= "th" src="http://lorempixel.com/650/550/<%= @picture[:url]%>"><br>
+
+		<p>leave a review</p>
+	</div>
+
+	<div class="medium-6 columns">
+			<p><%= @picture[:created_at] %></p>
+			<p><%= @picture[:description] %></p>
+	</div>
+
+</div>

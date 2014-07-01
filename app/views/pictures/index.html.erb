@@ -1,0 +1,107 @@
+<div class="row">
+
+<h1>All Pictures</h1>
+
+
+	
+
+		<div class="medium-2 columns">
+			
+			Sidebar ....
+		</div>
+
+
+		<div class="medium-10 columns">
+
+			<ul class="small-block-grid-3 gallery">
+
+			<% @pictures.each do |pic| %>
+			  <li class="view view-first"><a href="pictures/<%= pic.id %>"><img src="http://lorempixel.com/260/200/<%= pic.url %>"></a>
+					   <span class="mask">
+                        <h2><%= pic.title %></h2>
+                        <p><%= pic.author %></p>
+                        <a href="pictures/<%= pic.id %>" class="button tiny">See More</a>
+                    </span>
+			  </li>
+			<% end %>	
+<!-- 
+			  <li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/2/" alt="">
+					   <span class="mask">
+                        <h2>Title</h2>
+                        <p>Author</p>
+                        <a href="#" class="button tiny">See More</a>
+                    </span>
+			  </li>
+			
+
+
+			    <li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/3/" alt="">
+					   <span class="mask">
+                        <h2>Title</h2>
+                        <p>Author</p>
+                        <a href="#" class="button tiny">See More</a>
+                    </span>
+			  </li>
+				
+			<hr>
+
+			 
+			   <li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/4/" alt="">
+					   <span class="mask">
+                        <h2>Title</h2>
+                        <p>Author</p>
+                        <a href="#" class="button tiny">See More</a>
+                    </span>
+			  </li>
+
+
+
+			   <li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/5/" alt="">
+					   <span class="mask">
+                        <h2>Title</h2>
+                        <p>Author</p>
+                        <a href="#" class="button tiny">See More</a>
+                    </span>
+			  </li>
+
+
+			  <li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/6/" alt="">
+					   <span class="mask">
+                        <h2>Title</h2>
+                        <p>Author</p>
+                        <a href="#" class="button tiny">See More</a>
+                    </span>
+			  </li>
+			
+			 <hr>
+ 			<li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/7/" alt="">
+					   <span class="mask">
+                        <h2>Title</h2>
+                        <p>Author</p>
+                        <a href="#" class="button tiny">See More</a>
+                    </span>
+			  </li>
+
+ 			<li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/8/" alt="">
+					   <span class="mask">
+                        <h2>Title</h2>
+                        <p>Author</p>
+                        <a href="#" class="button tiny">See More</a>
+                    </span>
+			  </li>
+
+
+			 <li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/1/" alt="">
+					   <span class="mask">
+                        <h2>Title</h2>
+                        <p>Author</p>
+                        <a href="#" class="button tiny">See More</a>
+                    </span>
+			 </li>
+ -->
+
+			
+		</ul>	
+	</div>
+
+</div><!-- row -->
