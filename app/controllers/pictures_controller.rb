@@ -20,12 +20,13 @@ class PicturesController < ApplicationController
 
    def create
      	
-      @picture = Picture.new(picture_params)
+    @picture = Picture.new(picture_params)
+
       if @picture.save
-        redirect_to pictures_url
+        redirect_to picture_path(@picture)
       else
         render :new
-    end
+      end
    end
 
   def edit
@@ -70,7 +71,7 @@ class PicturesController < ApplicationController
 
   private
   def picture_params
-    params.require(:picture).permit(:author, :title, :description, :url, :category)
+    params.require(:picture).permit(:author, :title, :description, :url, :category, :custom_url)
   end
 
 

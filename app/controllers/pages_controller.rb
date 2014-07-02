@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
-  
+
 
   def nature
     @picture_nature = Picture.picture_nature
+
   end
 
 
@@ -29,6 +30,8 @@ class PagesController < ApplicationController
   def people
     @picture_people = Picture.picture_people
   end
+
+ 
 
 
 end

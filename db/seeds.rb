@@ -28,16 +28,17 @@ pictures = []
   rand_title = %w(Cliché Shot Photo Photograph Picture Pic Art)
   
   title =  "*" +  category_title.capitalize.to_s + "  " + rand_title[(rand(0..7))].to_s + "*" 
-  
-  new_pic = [title, author, description, url, category]
+  custom_url = ""
+  new_pic = [title, author, description, url, category,custom_url]
   pictures.push(new_pic)
 end
 
-pictures.each do |title, author, description, url, category|
+pictures.each do |title, author, description, url, category,custom_url|
   Picture.create( :title => title,
     :author => author,
     :description => description,
     :url => url,
+    :custom_url => custom_url,
     :category => category  
     )
 end

@@ -24,7 +24,7 @@
      <ul class="small-block-grid-3 gallery">
 
       <% @picture_people.each do |pic| %>
-        <li class="view view-first"><a href="pictures/<%= pic.id %>"><img class= "th" src="http://lorempixel.com/260/200/<%= pic.url %>"></a>
+        <li class="view view-first"><a href="<% link_to picture_path(pic) %>"><img class= "th" src="http://lorempixel.com/260/200/<%= pic.url %>"></a>
              <span class="mask">
                         <h2><%= pic.title %></h2>
                         <p><%= pic.author %></p>

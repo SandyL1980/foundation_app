@@ -1,2 +1,57 @@
-<h1>Pages#show</h1>
-<p>Find me in app/views/pages/show.html.erb</p>
+<div class="row">
+
+	<h1><%= @picture[:title] %></h1>
+	<p>By <%= @picture[:author] %></p>
+	<hr>
+
+	
+	<%= render 'navlinks' %>
+
+	<div class="clearfix"></div>
+
+	<div class="medium-6 columns">
+		<img class= "th" src="http://lorempixel.com/650/550/<%= @picture[:url]%>"><br>
+
+	</div>
+
+	<div class="medium-6 columns">
+			<p><%= @picture[:created_at] %></p>
+			<p><strong>Category: <%= link_to @picture.category, "/pages/#{@picture.category}" %></strong></p>
+			<p><%= @picture[:description] %></p>
+
+			<hr>
+
+			<h3>Reviews</h3>
+			 <% @reviews.each do |review| %>
+				
+				<p><%= review.body %></p>
+					 <% if review.user != nil %>
+						<p><em> by <%= review.user.email %></em>Added on: <%= review.created_at %></p>
+
+						<% else %>
+
+						 <p>No review yet</p>
+							<% if current_user %>
+						 		<p><% link_to "Be the first to add a revew", new_picture_review_path(@picture) %></p>
+						 	<% end %>
+					 	<% end %>
+
+
+			 <% end %>
+			<p>-----------------------</p>
+
+			<% if current_user %>	
+				<p>Leave a review</p>
+
+				<%= render 'reviews/form' %>
+
+			<% else %>
+				 <p>Please <%= link_to "log in", new_user_session_path %> to add a review.</p> 
+			<% end %>
+
+
+			
+				
+		</div>
+
+	</div>
