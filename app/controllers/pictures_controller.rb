@@ -4,6 +4,7 @@ class PicturesController < ApplicationController
   def index
     @title = "All Pictures"
     @pictures = Picture.all
+    @most_recent_five = Picture.most_recent_five
 
     # @most_recent_pictures = Picture.most_recent_five
     @all_pic = Picture.all.count
@@ -48,6 +49,10 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
     @title = @picture.title
     @reviews =  @picture.reviews.all
+
+    if current_user
+      @review = @picture.reviews.build
+    end
 
     @pics = Picture.find(params[:id])
     # @comments =  @pics.comments.all

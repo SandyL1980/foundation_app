@@ -5,14 +5,13 @@
 	<hr>
 
 	
-	<p><%= link_to "Back", root_url %> | <%= link_to "Edit", edit_picture_path(@picture) %> | <%= link_to "Delete", @picture, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= render 'navlinks' %>
 
 	<div class="clearfix"></div>
 
 	<div class="medium-6 columns">
 		<img class= "th" src="http://lorempixel.com/650/550/<%= @picture[:url]%>"><br>
 
-		<p>leave a review</p>
 	</div>
 
 	<div class="medium-6 columns">
@@ -22,12 +21,36 @@
 			<hr>
 
 			<h3>Reviews</h3>
+			 <% @reviews.each do |review| %>
+				
+				<p><%= review.body %></p>
+					 <% if review.user != nil %>
+						<p><em> by <%= review.user.email %></em>Added on: <%= review.created_at %></p>
+
+						<% else %>
+
+						 <p>No review yet</p>
+							<% if current_user %>
+						 		<p><% link_to "Be the first to add a revew", new_picture_review_path(@picture) %></p>
+						 	<% end %>
+					 	<% end %>
+
+
+			 <% end %>
 			<p>-----------------------</p>
 
-			<p>leave a review</p>
+			<% if current_user %>	
+				<p>Leave a review</p>
 
-		
+				<%= render 'reviews/form' %>
+
+			<% else %>
+				 <p>Please <%= link_to "log in", new_user_session_path %> to add a review.</p> 
+			<% end %>
+
+
 			
-	</div>
+				
+		</div>
 
-</div>
+	</div>

@@ -1,22 +1,65 @@
+<div class="margin"></div>
+
 <div class="row">
 
 <h1>All Pictures</h1>
+<hr>
+
+<div class="row">
+	<div class="medium-3 columns">
+		<p>New Addition</p>
+		 <% @most_recent_five.each do |latest| %>
+		
+			<ul class="no-bullet">
+			  <li><strong><%= link_to latest.title, picture_path(latest) %></strong><br><em>by <%= latest. author %></em></li>		  
+			</ul>
+
+		<% end %>   
+
+	</div>
 
 
+	<div class="medium-9 columns show-for-large-up slider">
+
+		<ul class="example-orbit" data-orbit>
+		   <% @most_recent_five.each do |latest| %>
+
+		    <li>
+		       <img src="http://lorempixel.com/800/450/#{latest.url}" alt="slide 2" />
+		      <div class="orbit-caption">
+		        <h4><%= link_to latest[:title], picture_path(latest) %></h4>
+		        <h5 class="label">by <%= latest[:author] %></h5>
+		      </div>
+		    
+		    </li>       
+
+		   <% end %>   
+		</ul>
+
+   </div>	
+
+</div><!-- row -->
 	
 
+<div class="row">
 		<div class="medium-2 columns">
 			
-			Sidebar ....
+			<ul class="side-nav">
+			  <li><strong>Categories</strong></li>
+			  <li><a href="#">People</a></li>
+			  <li><a href="#">Nature</a></li>
+			  <li><a href="#">Animals</a></li>
+			  <li><a href="#">City</a></li>
+			</ul>
 		</div>
 
 
 		<div class="medium-10 columns">
 
-			<ul class="small-block-grid-3 gallery">
+		 <ul class="small-block-grid-3 gallery">
 
 			<% @pictures.each do |pic| %>
-			  <li class="view view-first"><a href="pictures/<%= pic.id %>"><img src="http://lorempixel.com/260/200/<%= pic.url %>"></a>
+			  <li class="view view-first"><a href="pictures/<%= pic.id %>"><img class= "th" src="http://lorempixel.com/260/200/<%= pic.url %>"></a>
 					   <span class="mask">
                         <h2><%= pic.title %></h2>
                         <p><%= pic.author %></p>
@@ -24,84 +67,10 @@
                     </span>
 			  </li>
 			<% end %>	
-<!-- 
-			  <li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/2/" alt="">
-					   <span class="mask">
-                        <h2>Title</h2>
-                        <p>Author</p>
-                        <a href="#" class="button tiny">See More</a>
-                    </span>
-			  </li>
-			
+		
+		 </ul>	
+	  </div>
 
-
-			    <li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/3/" alt="">
-					   <span class="mask">
-                        <h2>Title</h2>
-                        <p>Author</p>
-                        <a href="#" class="button tiny">See More</a>
-                    </span>
-			  </li>
-				
-			<hr>
-
-			 
-			   <li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/4/" alt="">
-					   <span class="mask">
-                        <h2>Title</h2>
-                        <p>Author</p>
-                        <a href="#" class="button tiny">See More</a>
-                    </span>
-			  </li>
-
-
-
-			   <li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/5/" alt="">
-					   <span class="mask">
-                        <h2>Title</h2>
-                        <p>Author</p>
-                        <a href="#" class="button tiny">See More</a>
-                    </span>
-			  </li>
-
-
-			  <li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/6/" alt="">
-					   <span class="mask">
-                        <h2>Title</h2>
-                        <p>Author</p>
-                        <a href="#" class="button tiny">See More</a>
-                    </span>
-			  </li>
-			
-			 <hr>
- 			<li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/7/" alt="">
-					   <span class="mask">
-                        <h2>Title</h2>
-                        <p>Author</p>
-                        <a href="#" class="button tiny">See More</a>
-                    </span>
-			  </li>
-
- 			<li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/8/" alt="">
-					   <span class="mask">
-                        <h2>Title</h2>
-                        <p>Author</p>
-                        <a href="#" class="button tiny">See More</a>
-                    </span>
-			  </li>
-
-
-			 <li class="view view-first"><img  class="th" src="http://lorempixel.com/260/200/sports/1/" alt="">
-					   <span class="mask">
-                        <h2>Title</h2>
-                        <p>Author</p>
-                        <a href="#" class="button tiny">See More</a>
-                    </span>
-			 </li>
- -->
-
-			
-		</ul>	
-	</div>
+  </div><!-- row -->
 
 </div><!-- row -->
