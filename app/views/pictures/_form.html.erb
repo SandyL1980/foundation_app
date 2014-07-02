@@ -1,4 +1,6 @@
-     <%= form_for  @picture do |f| %>
+
+
+     <%= form_for @picture do |f| %>
          
 
           <p>
@@ -9,13 +11,22 @@
             <%= f.label "title" %><br>
             <%= f.text_field "title" %>
           </p>
+
           <p>
             <%= f.label "url" %><br>
             <%= f.text_field "url" %>
           </p>
+
+          <div class="field">
+             <%= f.label "Category" %><br>
+          <%= f.select :category, Picture.all.collect {|x| x.category }, {}, :multiple => false %>
+          </div><br>
+
           <p>
             <%= f.submit "Save", class: "button success secondary right"%> 
           </p>
 
 
     <% end %>
+
+  

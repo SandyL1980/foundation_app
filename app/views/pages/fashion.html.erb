@@ -1,0 +1,41 @@
+<div class="margin"></div>
+
+<div class="row">
+
+<h1 class="left">All Pictures</h1> <p class="right"><%= link_to "Add Picture", new_picture_path, class: 'button radius' %></p>
+<hr>
+
+
+<div class="clearfix"></div>
+
+
+  
+
+<div class="row">
+    <div class="medium-2 columns">
+    
+    <%= render 'pictures/sidenav' %>
+      
+    </div>
+
+
+    <div class="medium-10 columns">
+
+     <ul class="small-block-grid-3 gallery">
+
+      <% @picture_fashion.each do |pic| %>
+        <li class="view view-first"><a href="pictures/<%= pic.id %>"><img class= "th" src="http://lorempixel.com/260/200/<%= pic.url %>"></a>
+             <span class="mask">
+                        <h2><%= pic.title %></h2>
+                        <p><%= pic.author %></p>
+                        <a href="pictures/<%= pic.id %>" class="button tiny">See More</a>
+                    </span>
+        </li>
+      <% end %> 
+    
+     </ul>  
+    </div>
+
+  </div><!-- row -->
+
+</div><!-- row -->

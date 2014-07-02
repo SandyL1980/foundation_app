@@ -2,9 +2,11 @@
 
 <div class="row">
 
-<h1>All Pictures</h1>
+<h1 class="left">All Pictures</h1> <p class="right"><%= link_to "Add Picture", new_picture_path, class: 'button radius' %></p>
 <hr>
 
+
+<div class="clearfix"></div>
 <div class="row">
 	<div class="medium-3 columns">
 		<p>New Addition</p>
@@ -43,14 +45,9 @@
 
 <div class="row">
 		<div class="medium-2 columns">
-			
-			<ul class="side-nav">
-			  <li><strong>Categories</strong></li>
-			  <li><a href="#">People</a></li>
-			  <li><a href="#">Nature</a></li>
-			  <li><a href="#">Animals</a></li>
-			  <li><a href="#">City</a></li>
-			</ul>
+		
+
+			<%= render 'sidenav' %>
 		</div>
 
 

@@ -59,6 +59,8 @@ class PicturesController < ApplicationController
     
   end
 
+  
+
   def destroy
     @title =  "Delete Picture"
     @picture = Picture.find(params[:id])
@@ -68,7 +70,7 @@ class PicturesController < ApplicationController
 
   private
   def picture_params
-    params.require(:picture).permit(:author, :title, :description, :url)
+    params.require(:picture).permit(:author, :title, :description, :url, :category)
   end
 
 

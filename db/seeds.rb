@@ -23,20 +23,22 @@ pictures = []
   url = cat.to_s + "/" + rand(1..9).to_s + "/"
   cat_title = url.split
   category_title = cat_title[0].chop.chop.chop
+  category = category_title
 
   rand_title = %w(Cliché Shot Photo Photograph Picture Pic Art)
   
   title =  "*" +  category_title.capitalize.to_s + "  " + rand_title[(rand(0..7))].to_s + "*" 
   
-  new_pic = [title, author, description, url]
+  new_pic = [title, author, description, url, category]
   pictures.push(new_pic)
 end
 
-pictures.each do |title, author, description, url|
+pictures.each do |title, author, description, url, category|
   Picture.create( :title => title,
     :author => author,
     :description => description,
-    :url => url 
+    :url => url,
+    :category => category  
     )
 end
 
