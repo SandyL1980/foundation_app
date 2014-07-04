@@ -1,11 +1,7 @@
 <ul class="side-nav">
 			  <li><strong>Categories</strong></li>
 			  <li><strong><%= link_to "Add Picture", new_picture_path, class: 'label secondary' %></strong></li>
-			  <li><%= link_to 'People', page_path('people') %></li>
-			  <li><%= link_to 'Nature', page_path('nature') %></li>
-			  <li><%= link_to 'Animals', page_path('animal') %></li>
-			  <li><%= link_to 'Fashion', page_path('fashion') %></li>
-			  <li><%= link_to 'Business', page_path('business') %></li>
-			  <li><%= link_to 'Technic', page_path('technic') %></li>
-			  <li><%= link_to 'City', page_path('city') %></li>
+			  <% Category.all.each do |category| %>
+			  	<li><%= link_to category.name, "/categories/#{category.name}" %></li>	
+			  <% end %>
 			</ul>

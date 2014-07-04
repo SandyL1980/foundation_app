@@ -2,13 +2,11 @@ class PagesController < ApplicationController
 
 
   def nature
-    @picture_nature = Picture.picture_nature
-
+    @pictures = Picture.nature
   end
 
-
   def fashion
-    @picture_fashion = Picture.picture_fashion
+    @pictures = Picture.fashion
   end
 
   def animal

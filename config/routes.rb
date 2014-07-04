@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  # resources :categories, :only => [:index, :show]
+  get 'categories/:name', :to => 'categories#index', :as => "category"
 
   get 'pages/index'
 
@@ -13,11 +15,4 @@ Rails.application.routes.draw do
   	resources :reviews
   end
 
-  get 'pages/nature', :to => 'pages#nature'
-  get 'pages/animal', :to => 'pages#animal'
-  get 'pages/fashion', :to => 'pages#fashion'
-  get 'pages/city', :to => 'pages#city'
-  get 'pages/business', :to => 'pages#business'
-  get 'pages/technic', :to => 'pages#technic'
-  get 'pages/people', :to => 'pages#people'
 end

@@ -23,7 +23,8 @@ pictures = []
   url = cat.to_s + "/" + rand(1..9).to_s + "/"
   cat_title = url.split
   category_title = cat_title[0].chop.chop.chop
-  category = category_title
+  category = Category.find_or_create_by(name: category_title)
+  # category = category_title 
 
   rand_title = %w(Cliché Shot Photo Photograph Picture Pic Art)
   
@@ -39,7 +40,7 @@ pictures.each do |title, author, description, url, category,custom_url|
     :description => description,
     :url => url,
     :custom_url => custom_url,
-    :category => category  
+    :category_id => category.id  
     )
 end
 
